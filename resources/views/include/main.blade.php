@@ -14,10 +14,18 @@
                 <h4>DESTINATION TIME:</h4>
                 <P>{{$train->destination_time}}</P>
             </div> 
-            <div>
+            <div class="me-5">
                 <h4>TRAIN NUMBER:</h4>
                 <P>{{$train->train_number}}</P>
-            </div>                                                              
+            </div>               
+            <div class="me-5">
+                <h4>DELAY:</h4>
+                @if ($train->is_delay === 0)
+                <p>il treno e' in ritardo</p>
+                @elseif ($train->is_delay === 1)
+                <p>il treno e' in orario</p>
+                @endif
+            </div>                                                               
         </div>
         @endforeach
     </ul>
