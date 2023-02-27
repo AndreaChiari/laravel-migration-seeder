@@ -17,10 +17,12 @@ return new class extends Migration
             $table->string('starting_station', 50);
             $table->time('starting_time');
             $table->time('destination_time');
+            $table->date('date')->unsigned();
             $table->tinyInteger('train_number')->unsigned();
             $table->tinyInteger('wagon_number')->unsigned();
             $table->boolean('is_delay');
             $table->boolean('is_delete');
+            $table->timestamps();
         });
     }
 
